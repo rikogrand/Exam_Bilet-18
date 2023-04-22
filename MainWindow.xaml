@@ -1,0 +1,23 @@
+﻿<Window x:Class="exam_Korondenko.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:exam_Korondenko"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <DataGrid x:Name="jewerlyGrid" AutoGenerateColumns="False" ItemsSource="{Binding jewerlyData.jewerlyList}" Margin="0,0,84,120">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding Path=Name}"/>
+                <DataGridTextColumn Header="Колво карат" Binding="{Binding Path=Carates}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Path=Price}"/>
+                <DataGridTextColumn Header="Тип украшения" Binding="{Binding Path=Type}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock HorizontalAlignment="Left" Margin="165,371,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Поиск по назван"/><Run Text="и"/><Run Text="ю:"/></TextBlock>
+        <TextBox x:Name="searchTextBox" Margin="321,370,359,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+
+    </Grid>
+</Window>
